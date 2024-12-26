@@ -1,216 +1,215 @@
 export const ABI = [
   {
-    "type": "impl",
-    "name": "CounterImpl",
-    "interface_name": "workshop::counter::ICounter"
+    name: "CounterImpl",
+    type: "impl",
+    interface_name: "cum_laude::ICounter",
   },
   {
-    "type": "interface",
-    "name": "workshop::counter::ICounter",
-    "items": [
+    name: "cum_laude::ICounter",
+    type: "interface",
+    items: [
       {
-        "type": "function",
-        "name": "get_counter",
-        "inputs": [],
-        "outputs": [
+        name: "get_counter",
+        type: "function",
+        inputs: [],
+        outputs: [
           {
-            "type": "core::integer::u32"
-          }
+            type: "core::integer::u32",
+          },
         ],
-        "state_mutability": "view"
+        state_mutability: "view",
       },
       {
-        "type": "function",
-        "name": "increase_counter",
-        "inputs": [],
-        "outputs": [],
-        "state_mutability": "external"
+        name: "increase_counter",
+        type: "function",
+        inputs: [],
+        outputs: [],
+        state_mutability: "external",
       },
       {
-        "type": "function",
-        "name": "decrease_counter",
-        "inputs": [],
-        "outputs": [],
-        "state_mutability": "external"
+        name: "decrease_counter",
+        type: "function",
+        inputs: [],
+        outputs: [],
+        state_mutability: "external",
       },
       {
-        "type": "function",
-        "name": "reset_counter",
-        "inputs": [],
-        "outputs": [],
-        "state_mutability": "external"
-      }
-    ]
+        name: "reset_counter",
+        type: "function",
+        inputs: [],
+        outputs: [],
+        state_mutability: "external",
+      },
+    ],
   },
   {
-    "type": "impl",
-    "name": "OwnableMixinImpl",
-    "interface_name": "openzeppelin_access::ownable::interface::OwnableABI"
+    name: "OwnableTwoStep",
+    type: "impl",
+    interface_name: "openzeppelin_access::ownable::interface::IOwnableTwoStep",
   },
   {
-    "type": "interface",
-    "name": "openzeppelin_access::ownable::interface::OwnableABI",
-    "items": [
+    name: "openzeppelin_access::ownable::interface::IOwnableTwoStep",
+    type: "interface",
+    items: [
       {
-        "type": "function",
-        "name": "owner",
-        "inputs": [],
-        "outputs": [
+        name: "owner",
+        type: "function",
+        inputs: [],
+        outputs: [
           {
-            "type": "core::starknet::contract_address::ContractAddress"
-          }
+            type: "core::starknet::contract_address::ContractAddress",
+          },
         ],
-        "state_mutability": "view"
+        state_mutability: "view",
       },
       {
-        "type": "function",
-        "name": "transfer_ownership",
-        "inputs": [
+        name: "pending_owner",
+        type: "function",
+        inputs: [],
+        outputs: [
           {
-            "name": "new_owner",
-            "type": "core::starknet::contract_address::ContractAddress"
-          }
+            type: "core::starknet::contract_address::ContractAddress",
+          },
         ],
-        "outputs": [],
-        "state_mutability": "external"
+        state_mutability: "view",
       },
       {
-        "type": "function",
-        "name": "renounce_ownership",
-        "inputs": [],
-        "outputs": [],
-        "state_mutability": "external"
+        name: "accept_ownership",
+        type: "function",
+        inputs: [],
+        outputs: [],
+        state_mutability: "external",
       },
       {
-        "type": "function",
-        "name": "transferOwnership",
-        "inputs": [
+        name: "transfer_ownership",
+        type: "function",
+        inputs: [
           {
-            "name": "newOwner",
-            "type": "core::starknet::contract_address::ContractAddress"
-          }
+            name: "new_owner",
+            type: "core::starknet::contract_address::ContractAddress",
+          },
         ],
-        "outputs": [],
-        "state_mutability": "external"
+        outputs: [],
+        state_mutability: "external",
       },
       {
-        "type": "function",
-        "name": "renounceOwnership",
-        "inputs": [],
-        "outputs": [],
-        "state_mutability": "external"
-      }
-    ]
+        name: "renounce_ownership",
+        type: "function",
+        inputs: [],
+        outputs: [],
+        state_mutability: "external",
+      },
+    ],
   },
   {
-    "type": "constructor",
-    "name": "constructor",
-    "inputs": [
+    name: "constructor",
+    type: "constructor",
+    inputs: [
       {
-        "name": "init_value",
-        "type": "core::integer::u32"
+        name: "init_value",
+        type: "core::integer::u32",
       },
       {
-        "name": "owner",
-        "type": "core::starknet::contract_address::ContractAddress"
-      }
-    ]
+        name: "owner",
+        type: "core::starknet::contract_address::ContractAddress",
+      },
+    ],
   },
   {
-    "type": "event",
-    "name": "workshop::counter::Counter::CounterIncreased",
-    "kind": "struct",
-    "members": [
+    kind: "struct",
+    name: "cum_laude::Counter::CounterDecreased",
+    type: "event",
+    members: [
       {
-        "name": "counter",
-        "type": "core::integer::u32",
-        "kind": "data"
-      }
-    ]
+        kind: "data",
+        name: "counter",
+        type: "core::integer::u32",
+      },
+    ],
   },
   {
-    "type": "event",
-    "name": "workshop::counter::Counter::CounterDecreased",
-    "kind": "struct",
-    "members": [
+    kind: "struct",
+    name: "cum_laude::Counter::CounterIncreased",
+    type: "event",
+    members: [
       {
-        "name": "counter",
-        "type": "core::integer::u32",
-        "kind": "data"
-      }
-    ]
+        kind: "data",
+        name: "counter",
+        type: "core::integer::u32",
+      },
+    ],
   },
   {
-    "type": "event",
-    "name": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
-    "kind": "struct",
-    "members": [
+    kind: "struct",
+    name: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+    type: "event",
+    members: [
       {
-        "name": "previous_owner",
-        "type": "core::starknet::contract_address::ContractAddress",
-        "kind": "key"
+        kind: "key",
+        name: "previous_owner",
+        type: "core::starknet::contract_address::ContractAddress",
       },
       {
-        "name": "new_owner",
-        "type": "core::starknet::contract_address::ContractAddress",
-        "kind": "key"
-      }
-    ]
+        kind: "key",
+        name: "new_owner",
+        type: "core::starknet::contract_address::ContractAddress",
+      },
+    ],
   },
   {
-    "type": "event",
-    "name": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
-    "kind": "struct",
-    "members": [
+    kind: "struct",
+    name: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+    type: "event",
+    members: [
       {
-        "name": "previous_owner",
-        "type": "core::starknet::contract_address::ContractAddress",
-        "kind": "key"
+        kind: "key",
+        name: "previous_owner",
+        type: "core::starknet::contract_address::ContractAddress",
       },
       {
-        "name": "new_owner",
-        "type": "core::starknet::contract_address::ContractAddress",
-        "kind": "key"
-      }
-    ]
+        kind: "key",
+        name: "new_owner",
+        type: "core::starknet::contract_address::ContractAddress",
+      },
+    ],
   },
   {
-    "type": "event",
-    "name": "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
-    "kind": "enum",
-    "variants": [
+    kind: "enum",
+    name: "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+    type: "event",
+    variants: [
       {
-        "name": "OwnershipTransferred",
-        "type": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
-        "kind": "nested"
+        kind: "nested",
+        name: "OwnershipTransferred",
+        type: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
       },
       {
-        "name": "OwnershipTransferStarted",
-        "type": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
-        "kind": "nested"
-      }
-    ]
+        kind: "nested",
+        name: "OwnershipTransferStarted",
+        type: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+      },
+    ],
   },
   {
-    "type": "event",
-    "name": "workshop::counter::Counter::Event",
-    "kind": "enum",
-    "variants": [
+    kind: "enum",
+    name: "cum_laude::Counter::Event",
+    type: "event",
+    variants: [
       {
-        "name": "CounterIncreased",
-        "type": "workshop::counter::Counter::CounterIncreased",
-        "kind": "nested"
+        kind: "nested",
+        name: "CounterDecreased",
+        type: "cum_laude::Counter::CounterDecreased",
       },
       {
-        "name": "CounterDecreased",
-        "type": "workshop::counter::Counter::CounterDecreased",
-        "kind": "nested"
+        kind: "nested",
+        name: "CounterIncreased",
+        type: "cum_laude::Counter::CounterIncreased",
       },
       {
-        "name": "OwnableEvent",
-        "type": "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
-        "kind": "flat"
-      }
-    ]
-  }
+        kind: "flat",
+        name: "OwnableEvent",
+        type: "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+      },
+    ],
+  },
 ] as const;
